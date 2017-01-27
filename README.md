@@ -24,7 +24,7 @@ $ make install
 ```
 the `make install` will install your module (binary, xml files, etc) in the icub Contrib folder which is already setup on your machine. 
 
-# Run the test the module
+# Run and test the module
 open a terminal and connect to the `/MemoryModule/rpc` port using `yarp rpc` command: 
 ```
 $ yarp rpc /mymodule
