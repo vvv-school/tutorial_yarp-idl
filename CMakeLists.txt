@@ -30,13 +30,21 @@ include_directories(${YARP_INCLUDE_DIRS}
                     ${CMAKE_SOURCE_DIR}/src
                     ${CMAKE_SOURCE_DIR}/src/idl/generated)
 
-add_executable(${PROJECT_NAME} 
+# buulding server
+add_executable(tutorial_yarp-idl-server
                ${CMAKE_SOURCE_DIR}/src/idl/generated/Memory.cpp
                ${CMAKE_SOURCE_DIR}/src/MemoryModule.cpp
                ${CMAKE_SOURCE_DIR}/src/main.cpp)
+target_link_libraries(tutorial_yarp-idl-server ${YARP_LIBRARIES})
+install(TARGETS tutorial_yarp-idl-server DESTINATION bin)
 
-target_link_libraries(${PROJECT_NAME} ${YARP_LIBRARIES})
-install(TARGETS ${PROJECT_NAME} DESTINATION bin)
+
+# buulding server
+add_executable(tutorial_yarp-idl-client
+               ${CMAKE_SOURCE_DIR}/src/idl/generated/Memory.cpp
+               ${CMAKE_SOURCE_DIR}/src/MemoryClient.cpp)
+target_link_libraries(tutorial_yarp-idl-client ${YARP_LIBRARIES})
+install(TARGETS tutorial_yarp-idl-client DESTINATION bin)
 
 
 # generate ad-hoc project to perform "make uninstall"
@@ -47,5 +55,3 @@ yarp_install(FILES ${scripts} DESTINATION ${ICUBCONTRIB_APPLICATIONS_INSTALL_DIR
 
 #file(GLOB scripts ${CMAKE_SOURCE_DIR}/app/scripts/*.xml)
 #yarp_install(FILES tutorial_yarp-idl.xml DESTINATION ${ICUBCONTRIB_MODULES_INSTALL_DIR})
-
-
