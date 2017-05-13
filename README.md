@@ -1,7 +1,7 @@
 Tutorial on Thrift IDL 
 =======================
 
-This tutorial will guide you to understand the concept of [IDL] (https://en.wikipedia.org/wiki/Interface_description_language) and develop a simple module using yarp thrift IDL. 
+This tutorial will guide you to understand the concept of [IDL](https://en.wikipedia.org/wiki/Interface_description_language) and develop a simple module using yarp thrift IDL. 
 
 # Build and Install the code
 Follow these steps to build and properly install your module: 
