@@ -9,14 +9,14 @@ Follow these steps to build and properly install your module:
 - regenerate the cpp files from thrift idl
 
 ```
-$ cd tutotial_RFModule/src/idl
+$ cd tutorial_RFModule/src/idl
 $ yarpidl_thrift --gen yarp --out . memory.thrift
 ```
 The `yarpidl_thrift` parse the `memory.thrift` interface file and generate the related code into `tutotial_RFModule/src/idl/generated`
 
 - compile and build 
 ```
-$ cd tutotial_RFModule
+$ cd tutorial_RFModule
 $ mkdir build; cd build
 $ cmake ../
 $ make
