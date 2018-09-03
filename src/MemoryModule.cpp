@@ -5,6 +5,7 @@
  */
 
 #include <map>
+#include <iostream>
 #include <MemoryModule.h>
 #include <yarp/os/LogStream.h>
 
