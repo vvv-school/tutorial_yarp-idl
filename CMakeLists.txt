@@ -18,16 +18,11 @@ include(ICUBcontribOptions)
 # specify to install in $ICUBcontrib_DIR/bin
 icubcontrib_set_default_prefix()
 
-# import math symbols from standard cmath
-#add_definitions(-D_MY_DEFINITION)
-
-
-
 # building module
 include_directories(${CMAKE_SOURCE_DIR}/src
                     ${CMAKE_SOURCE_DIR}/src/idl/generated)
 
-# buulding server
+# bulding server
 add_executable(tutorial_yarp-idl-server
                ${CMAKE_SOURCE_DIR}/src/idl/generated/Memory.cpp
                ${CMAKE_SOURCE_DIR}/src/MemoryModule.cpp
@@ -35,14 +30,12 @@ add_executable(tutorial_yarp-idl-server
 target_link_libraries(tutorial_yarp-idl-server ${YARP_LIBRARIES})
 install(TARGETS tutorial_yarp-idl-server DESTINATION bin)
 
-
-# buulding server
+# bulding client
 add_executable(tutorial_yarp-idl-client
                ${CMAKE_SOURCE_DIR}/src/idl/generated/Memory.cpp
                ${CMAKE_SOURCE_DIR}/src/MemoryClient.cpp)
 target_link_libraries(tutorial_yarp-idl-client ${YARP_LIBRARIES})
 install(TARGETS tutorial_yarp-idl-client DESTINATION bin)
-
 
 # generate ad-hoc project to perform "make uninstall"
 icubcontrib_add_uninstall_target()
